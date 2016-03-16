@@ -1,0 +1,53 @@
+<head>
+  <meta charset="utf-8">
+  <title>Looking at life</title>
+
+  <!-- Sets initial viewport load and disables zooming  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+</head>
+
+<body>
+  <div id="app" class="container {{visible}}">
+    {{> title}}
+
+    {{#if add}} {{> add}} {{/if}}
+
+    {{> posts}}
+  </div>
+</body>
+
+<template name="title">
+  <h1 class="title bigtext">
+    <span>Looking</span>
+    <span>at life</span>
+  </h1>
+</template>
+
+<template name="posts">
+  <ul>
+    {{#each posts}}
+      <li>
+        {{text}}
+      </li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="add">
+  <textarea id="lookingAt" rows="5" class="u-full-width" placeholder="Look at life..."></textarea>
+
+  <div class="row">
+    <div class="six columns">
+      <button class="submit u-full-width button-primary">Save</button>
+    </div>
+    <div class="six columns">
+      <button class="cancel u-full-width">Cancel</button>
+    </div>
+  </div>
+</template>
