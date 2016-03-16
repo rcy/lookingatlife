@@ -1,5 +1,6 @@
 body {
     background: yellow;
+    font-size: 16pt;
 }
 
 
@@ -17,5 +18,5 @@ body {
 textarea { height: auto; }
 
 .container {
-    max-width: 480px;
+    max-width: 640px;
 }
