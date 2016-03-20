@@ -50,3 +50,9 @@ li, p {
     color: inherit;
     background: white;
 }
+
+ul {
+    padding-left:0;
+    list-style-type: disc;
+    list-style-position: outside;
+}
