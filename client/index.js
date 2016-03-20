@@ -43,9 +43,21 @@ Template.add.events({
   'click .submit'(e, t) {
     var text = t.$('textarea').val().trim();
     if (text) {
-      Meteor.call('addPost', {_id: this._id, text: text});
-      Session.set('add');
-      Session.set('editing');
+      Meteor.call('addPost', {_id: this._id, text: text}, (err) => {
+        if (err) throw err;
+        Session.set('add');
+        Session.set('editing');
+      });
+    }
+  },
+  'click .delete'(ev) {
+    ev.preventDefault();
+    if (confirm('are you sure you want to permanently delete this?')) {
+      Meteor.call('deletePost', {_id: this._id}, (err) => {
+        if (err) throw err;
+        Session.set('add');
+        Session.set('editing');
+      });
     }
   }
 });

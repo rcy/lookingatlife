@@ -50,6 +50,10 @@
 </template>
 
 <template name="add">
+  {{#if editing}}
+    <button class="delete u-full-width">Delete</button>
+  {{/if}}
+
   <textarea id="lookingAt" rows="5" class="u-full-width" placeholder="Look at life...">{{this.text}}</textarea>
 
   <div class="row">
@@ -60,6 +64,7 @@
       <button class="cancel u-full-width">Cancel</button>
     </div>
   </div>
+        
 </template>
 
 <template name="edit">
