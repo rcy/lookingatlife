@@ -14,7 +14,7 @@ Template.posts.helpers({
 });
 
 $(document).on('keyup', function( event ) {
-  if (event.which === 73 && $('input:focus').length === 0) {
+  if (event.which === 65 && $('input:focus').length === 0) {
     Session.set('add', true);
   } else if (event.which === 27) {
     Session.set('add', false);
