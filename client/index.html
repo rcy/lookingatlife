@@ -13,6 +13,10 @@
 </head>
 
 <body>
+  {{> main}}
+</body>
+
+<template name="main">
   <div id="app" class="container {{visible}}">
     {{> title}}
 
@@ -20,7 +24,7 @@
 
     {{> posts}}
   </div>
-</body>
+</template>
 
 <template name="title">
   <h1 class="title bigtext">

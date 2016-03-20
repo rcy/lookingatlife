@@ -1,3 +1,12 @@
+Template.main.onRendered(function () {
+  Tracker.autorun(function () {
+    if (Session.equals('visible', 'visible')) {
+      console.log('bigtext');
+      $('.bigtext').bigtext();
+    }
+  });
+});
+
 Template.posts.helpers({
   posts: function () {
     return Posts.find({}, {sort: {createdAt: -1}});

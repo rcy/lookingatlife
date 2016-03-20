@@ -4,15 +4,23 @@ body {
 }
 
 
-#app { visibility: hidden; }
-#app.visible { visibility: visible; }
+#app {
+    opacity: 0;
+    -webkit-transition: opacity .5s ease-in;
+       -moz-transition: opacity .5s ease-in;
+        -ms-transition: opacity .5s ease-in;
+         -o-transition: opacity .5s ease-in;
+            transition: opacity .5s ease-in;
+}
+
+#app.visible {
+    opacity: 1;
+}
 
 .title {
     font-family: 'vanillaregular';
     color: black;
-    /* text-shadow: 20px 20px #ff0000; */
-
-    text-shadow: #863027 .01em .01em 0, #863027 .02em .02em 0, #863027 .03em .03em 0, #863027 .04em .04em 0, #863027 .05em .05em 0, #863027 .06em .06em 0, #863027 .07em .07em 0, #863027 .08em .08em 0, #863027 .09em .09em 0, #863027 .1em .1em 0;
+    text-shadow: /* .5em .5em .1em #863027, */ .4em .4em .1em #863027, .3em .3em .1em #863027, .2em .2em .1em #863027, .1em .1em .1em #863027;
 }
 
 textarea { height: auto; }
