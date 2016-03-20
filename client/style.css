@@ -28,3 +28,9 @@ textarea { height: auto; }
 .container {
     max-width: 640px;
 }
+
+a.stealth {
+    color: inherit;
+    text-decoration: none;
+    cursor: text;
+}

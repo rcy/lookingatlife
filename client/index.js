@@ -39,3 +39,9 @@ Template.add.events({
     }
   }
 });
+
+Template.title.events({
+  'click .add'() {
+    Session.set('add', true);
+  }
+});
