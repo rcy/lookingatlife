@@ -23,6 +23,7 @@ body {
 }
 .title.markedit {
     color: red;
+    text-shadow: none;
 }
 
 textarea { height: auto; }
