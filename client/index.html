@@ -17,19 +17,21 @@
 </body>
 
 <template name="main">
-  <div id="app" class="container {{visible}}">
-    {{> title}}
+  <div id="app {{visible}}">
+    <div class="container">
+      {{> title}}
 
-    {{#if add}} {{> add}} {{/if}}
+      {{#if add}} {{> add}} {{/if}}
 
-    {{> posts}}
+      {{> posts}}
+    </div>
   </div>
 </template>
 
 <template name="title">
   <h1 class="title bigtext">
     <span>Looking</span>
-    <span><a href="#" class="add stealth">a</a>t life</span>
+    <span><a href="#" class="stealth add">a</a>t lif<a href="#" class="stealth edit">e</a></span>
   </h1>
 </template>
 
@@ -37,14 +39,18 @@
   <ul>
     {{#each posts}}
       <li>
-        {{#markdown}}{{text}}{{/markdown}}
+        {{#if editing}}
+          {{> add}}
+        {{else}}
+          {{#markdown}}{{text}}{{/markdown}} {{> edit}}
+        {{/if}}
       </li>
     {{/each}}
   </ul>
 </template>
 
 <template name="add">
-  <textarea id="lookingAt" rows="5" class="u-full-width" placeholder="Look at life..."></textarea>
+  <textarea id="lookingAt" rows="5" class="u-full-width" placeholder="Look at life...">{{this.text}}</textarea>
 
   <div class="row">
     <div class="six columns">
@@ -54,4 +60,10 @@
       <button class="cancel u-full-width">Cancel</button>
     </div>
   </div>
+</template>
+
+<template name="edit">
+  {{#if edit}}
+    <a href="#">edit</a>
+  {{/if}}
 </template>
