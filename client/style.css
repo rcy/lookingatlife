@@ -21,6 +21,9 @@ body {
     color: black;
     text-shadow: /* .5em .5em .1em #863027, */ .4em .4em .1em #863027, .3em .3em .1em #863027, .2em .2em .1em #863027, .1em .1em .1em #863027;
 }
+.title.markedit {
+    color: red;
+}
 
 textarea { height: auto; }
 
@@ -36,4 +39,13 @@ a.stealth {
 
 li, p {
     margin: 0;
+}
+
+.editable {
+    text-decoration: none;
+    color: inherit;
+}
+.editable:hover {
+    color: inherit;
+    background: white;
 }

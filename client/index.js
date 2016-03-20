@@ -13,6 +13,14 @@ Template.posts.helpers({
   }
 });
 
+Template.posts.events({
+  'click .editable'(ev) {
+    ev.preventDefault();
+    console.log('edit', this);
+    Session.set('editing', this._id);
+  }
+});
+
 $(document).on('keyup', function( event ) {
   if ($('textarea:focus').length === 0) {
     if (event.which === 65) {
@@ -74,13 +82,5 @@ Template.title.events({
     Session.set('add');
     Session.set('editing');
     Session.set('edit', !Session.get('edit'));
-  }
-});
-
-Template.edit.events({
-  click(ev) {
-    ev.preventDefault();
-    console.log('edit', this);
-    Session.set('editing', this._id);
   }
 });

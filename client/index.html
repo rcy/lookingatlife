@@ -29,7 +29,7 @@
 </template>
 
 <template name="title">
-  <h1 class="title bigtext">
+  <h1 class="title bigtext {{#if edit}}markedit{{/if}}">
     <span>Looking</span>
     <span><a href="#" class="stealth add">a</a>t lif<a href="#" class="stealth edit">e</a></span>
   </h1>
@@ -42,7 +42,11 @@
         {{#if editing}}
           {{> add}}
         {{else}}
-          {{#markdown}}{{text}}{{/markdown}} {{> edit}}
+          {{#if edit}}
+            <a href="#" class="editable">{{text}}</a>
+          {{else}}
+            {{#markdown}}{{text}}{{/markdown}}
+          {{/if}}
         {{/if}}
       </li>
     {{/each}}
@@ -65,10 +69,4 @@
     </div>
   </div>
         
-</template>
-
-<template name="edit">
-  {{#if edit}}
-    <a href="#">edit</a>
-  {{/if}}
 </template>
