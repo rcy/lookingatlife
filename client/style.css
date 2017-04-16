@@ -37,6 +37,10 @@ textarea { height: auto; }
     max-width: 640px;
 }
 
+a {
+    color: #33c3f0;
+}
+
 a.stealth {
     color: inherit;
     text-decoration: none;
