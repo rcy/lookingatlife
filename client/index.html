@@ -23,6 +23,10 @@
 
       {{#if add}} {{> add}} {{/if}}
 
+      {{#if tips}}
+        {{> tips}}
+      {{/if}}
+
       {{> posts}}
     </div>
   </div>
@@ -30,7 +34,7 @@
 
 <template name="title">
   <h1 class="title bigtext {{#if edit}}markedit{{/if}}">
-    <span>Looking</span>
+    <span>Lookin<a href="#" class="stealth tips">g</a></span>
     <span><a href="#" class="stealth add">a</a>t lif<a href="#" class="stealth edit">e</a></span>
   </h1>
 </template>
@@ -68,5 +72,18 @@
       <button class="cancel u-full-width">Cancel</button>
     </div>
   </div>
-        
+
+</template>
+
+<template name="tips">
+  <h1>to add, click the 'a'</h1>
+  <h1>to edit, click the 'e'</h1>
+  <h1>to format links, type:</h1>
+
+  <pre>
+[text you want to show](http://theurl.com)
+  </pre>
+
+  <button class="dismiss">thanks, tips</button>
+  <hr>
 </template>

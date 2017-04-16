@@ -38,6 +38,7 @@ $(document).on('keyup', function( event ) {
 UI.registerHelper('add', function () { return Session.get('add'); });
 UI.registerHelper('edit', function () { return Session.get('edit'); });
 UI.registerHelper('editing', function () { return Session.equals('editing', this._id); });
+UI.registerHelper('tips', function () { return Session.get('tips'); });
 
 Template.add.onRendered(function () {
   $('textarea').focus();
@@ -82,5 +83,16 @@ Template.title.events({
     Session.set('add');
     Session.set('editing');
     Session.set('edit', !Session.get('edit'));
+  },
+  'click .tips'(ev) {
+    console.log('click tips');
+    ev.preventDefault();
+    Session.set('tips', !Session.get('tips'));
+  }
+});
+
+Template.tips.events({
+  'click .dismiss'() {
+    Session.set('tips');
   }
 });
