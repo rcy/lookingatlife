@@ -1,3 +1,7 @@
+* {
+    cursor: url("/mouse-small.png"), auto;
+}
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -44,7 +48,6 @@ a {
 a.stealth {
     color: inherit;
     text-decoration: none;
-    cursor: text;
 }
 
 li, p {
